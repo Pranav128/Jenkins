@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'linux' // or whatever label your Linux agents have
+    }
 
     stages {
         stage('Compile') {
