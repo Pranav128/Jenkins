@@ -1,24 +1,24 @@
-pipeline{
+pipeline {
     agent any
 
-    stages{
-        stage("compile"){
-            steps{
+    stages {
+        stage('Compile') {
+            steps {
                 sh 'javac Demo.java'
             }
         }
-        stage("run"){
-            steps{
+        stage('Run') {
+            steps {
                 sh 'java Demo'
             }
         }
     }
-    post{
-        success{
-            echo "Done"
+    post {
+        success {
+            echo 'Build and execution completed successfully'
         }
-        failure{
-            echo "failed"
+        failure {
+            echo 'Pipeline failed - check logs for details'
         }
     }
 }
