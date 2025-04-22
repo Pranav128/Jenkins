@@ -1,17 +1,15 @@
 pipeline {
-    agent {
-        label 'linux' // or whatever label your Linux agents have
-    }
+    agent any
 
     stages {
         stage('Compile') {
             steps {
-                sh 'javac Demo.java'
+                bat 'javac Demo.java'
             }
         }
         stage('Run') {
             steps {
-                sh 'java Demo'
+                bat 'java Demo'
             }
         }
     }
